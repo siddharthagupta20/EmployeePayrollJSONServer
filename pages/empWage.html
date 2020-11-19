@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="/emp-payroll-jsonserver/css/empRegister.css">
 </head>
 <body>
+    <!--UC1-->
     <div class="background-img"></div>
     <header class="header-content header">
         <div class="logo-content">
@@ -17,5 +18,16 @@
             </div>
         </div>
     </header>
+    <!--UC2-->
+    <div class="form-content">
+        <form class="form"action="#" onsubmit="save();return false;">
+            <div class="form-head">Employee Payroll Form</div>
+            <div class="row-content">
+                <label class="label-text" for="name">Name:</label>
+                <input type="text" name="name" id="name" placeholder="John Doe" class="input" required>
+                <error-name class="name-error"></error-name>
+            </div>
+        </form>
+    </div>
 </body>
 </html>
