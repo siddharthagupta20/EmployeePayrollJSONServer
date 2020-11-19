@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Employee Payroll Form</title>
     <link rel="stylesheet" href="/emp-payroll-jsonserver/css/empRegister.css">
+    
 </head>
 <body>
     <!--UC1-->
@@ -77,7 +78,7 @@
             <div class="row-content slidecontainer">
                 <label class="label text" for="salary">Choose Your Salary: </label>
                 <input class="input slider" type="range" name="salary" id="salary" min="10000" max="100000" step="100" value="50000">
-                <output class="salary-output text" for="salary">5000</output>
+                <output class="salary-output text" for="salary">50000</output>
             </div>
     <!--UC5-->
             <div class="row-content">
@@ -145,7 +146,7 @@
                 <textarea id="notes" class="input" name="Notes" placeholder="additional info.." style="height: 100px;"></textarea>
             </div>
             <div class="buttonParent">
-                <a href="./home.html" class="resetButton button cancelButton">cancel</a>
+                <a href="./home.html" class="resetButton button cancelButton">Cancel</a>
                 <div class="submit-reset">
                     <button type="submit" class="button submitButton" id="submitButton">Submit</button>
                     <button type="reset" class="resetButton button">Reset</button>
@@ -154,4 +155,5 @@
         </form>
     </div>
 </body>
+<script src="/emp-payroll-jsonserver/js/emp_payroll_form.js"></script>
 </html>
