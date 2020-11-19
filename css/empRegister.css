@@ -260,3 +260,10 @@ label{
 .date-error{
     color: red;
 }
+/*UC12*/
+error-output{
+    margin-left: 10px;
+    font-size: 12px;
+    font-style: italic;
+    color: red;
+}
