@@ -31,14 +31,31 @@ window.addEventListener('DOMContentLoaded', (event) => {
        try{
          (new EmployeePayrollData()).startDate = new Date(parseInt(year), parseInt(month) - 1, parseInt(day));
         dateError.textContent = "";
-        console.log(day, month, year);
       }catch(e){
         dateError.textContent = "Invalid Date";
       }
     });
-    
     });
-    function save(){
+    
+    const save = () => {
+       try{
+         let employee = saveData();
+         createAndUpdateStorage(employee);
+       }catch(e){
+         return;
+       }
+    };
+    
+    function createAndUpdateStorage(employee){
+      let employeeList = JSON.parse(localStorage.getItem("EmployeePayrollList"));
+      if(employeeList != undefined) employeeList.push(employee);
+      else employeeList = [employee];
+    
+      alert(employeeList.toString());
+      localStorage.setItem("EmployeePayrollList", JSON.stringify(employeeList));
+    }
+    
+    function saveData(){
       let employee = new EmployeePayrollData();
       employee.name= document.getElementById("name").value;
       employee.picture = document.querySelector('input[name = profile]:checked').value;
@@ -51,6 +68,6 @@ window.addEventListener('DOMContentLoaded', (event) => {
       employee.note = document.getElementById("notes").value;
       employee.startDate = new Date(parseInt(year), parseInt(month) - 1, parseInt(day));
     
-    
+     createAndUpdateStorage(employee);
      alert("Thank you. your data is saved " + employee.toString());
     }
