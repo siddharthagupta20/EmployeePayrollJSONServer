@@ -23,3 +23,11 @@ function save(){
   
    alert("Thank you. your data is saved" + employee.toString());
   }
+  //UC10
+  const text = document.querySelector("#name");
+const textError = document.querySelector(".text-error");
+const nameRegex = RegExp("^[A-Z]{1}[a-z]{2,}$");
+text.addEventListener("input", function () {
+  if (nameRegex.test(text.value)) textError.textContent = "";
+  else textError.textContent = "Name is Incorrect";
+});

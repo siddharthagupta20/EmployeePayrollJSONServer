@@ -252,3 +252,11 @@ label{
         flex-flow: wrap;
     }
 }
+/*UC10*/
+.text-error{
+    color: red;
+}
+
+.date-error{
+    color: red;
+}
