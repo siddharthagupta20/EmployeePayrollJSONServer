@@ -26,7 +26,7 @@
             <div class="row-content">
                 <label class="label-text" for="name">Name</label>
                 <input type="text" name="name" id="name" placeholder="John Doe" class="input" required>
-                <error-name class="name-error"></error-name>
+                <error-output class="text-error" for='text'></error-output>
             </div>
     <!--UC3-->
             <div class="row-content">
@@ -139,6 +139,7 @@
                         <option value="2016">2016</option>
                     </select>
                 </div>
+                <error-output class="date-error" for='text'></error-output>
             </div>
 <!--UC6-->
             <div class="row-content">
@@ -156,5 +157,5 @@
     </div>
 </body>
 <script src="/emp-payroll-jsonserver/js/emp_payroll_form.js"></script>
-<script defer src ="../js/employee_payroll_data.js"></script>
+<script defer src ="../js/emp_payroll_data.js"></script>
 </html>
