@@ -36,27 +36,27 @@
       "id": 1002
     },
     {
-      "_name": "Satyaki Ghosh",
+      "id": 1003,
+      "_name": "Bill Gates",
       "_gender": "male",
       "_department": [
-        "Sales"
+        "Engineering"
       ],
-      "_salary": "4000",
+      "_salary": "5000",
       "_startDate": "29 Oct 2019",
-      "_note": "",
-      "_picture": "../assets/profile-images/Ellipse -3.png",
-      "id": 1003
+      "_note": "Terrific Engineer",
+      "_picture": "../assets/profile-images/Ellipse -1.png"
     },
     {
-      "_name": "Satyaki Ghosh",
+      "_name": "Siddhartha",
+      "_picture": "../assets/profile-images/Ellipse -3.png",
       "_gender": "male",
       "_department": [
-        "Sales"
+        "Engineer"
       ],
-      "_salary": "4000",
-      "_startDate": "29 Oct 2019",
+      "_salary": "50000",
       "_note": "",
-      "_picture": "../assets/profile-images/Ellipse -3.png",
+      "_startDate": "2020-11-18T18:30:00.000Z",
       "id": 1004
     }
   ]
