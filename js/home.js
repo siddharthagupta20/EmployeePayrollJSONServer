@@ -9,6 +9,7 @@ window.addEventListener("DOMContentLoaded", (event) => {
 const processEmpDataResponse = () => {
     document.querySelector(".emp-count").textContent = employeePayrollList.length;
     createInnerHtml();
+    localStorage.removeItem("editEmp");
 };
 
 const getEmployeeFromStorage = () => {
