@@ -20,13 +20,14 @@ class EmployeePayrollData{
     set gender(gender){this._gender = gender;}
 
     get department(){return this._department;}
-    set department(department){
-       this._department=department;
-    }
+    set department(department){this._department = department;}
 
     get startDate(){return this._startDate;}
     set startDate(startDate){
-        if(startDate <= new Date())this._startDate = startDate;
+        const date = new Date();
+        if(startDate <= date) {
+         this._startDate = startDate;
+        }
         else throw "Enter valid date";
     }
 
@@ -36,8 +37,7 @@ class EmployeePayrollData{
     toString(){
         const options ={ year : "numeric", month : "long", day : "numeric"};
         const empDate = this.startDate === undefined ? "undefined" :
-                       this.startDate.toLocaleDateString("en-US", options);
-        return "id= "+ this.id+" name = "+ this.name + " picture= "+ this.picture+" gender = "+ this.gender +" department = "+ this.department + " salary = "+ this.salary+ " startDate= "+ this.startDate+ " note= "+ this.note;
-
+                       this.startDate.toLocaleDateString("en-GB", options);
+       return "id= "+ this.id+" name = "+ this.name + " picture= "+ this.picture+" gender = "+ this.gender +" department = "+ this.department + " salary = "+ this.salary+ " startDate= "+ this.startDate+ " note= "+ this.note;
     }
 }
