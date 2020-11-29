@@ -23,13 +23,13 @@ window.addEventListener('DOMContentLoaded', (event) => {
     });
     
     const startDate = document.querySelector("#startDate");
-    const day = document.getElementById("day").value;
-    const month = document.getElementById("month").value;
-    const year = document.getElementById("year").value;
+    const day = document.getElementById("day");
+    const month = document.getElementById("month");
+    const year = document.getElementById("year");
     const dateError = document.querySelector(".date-error");
     startDate.addEventListener("input", async function(){
        try{
-         (new EmployeePayrollData()).startDate = new Date(parseInt(year), parseInt(month) - 1, parseInt(day));
+         (new EmployeePayrollData()).startDate = new Date(day.value+" "+month.value+" "+year.value);
         dateError.textContent = "";
       }catch(e){
         dateError.textContent = "Invalid Date";
@@ -51,8 +51,8 @@ window.addEventListener('DOMContentLoaded', (event) => {
       if(employeeList != undefined) employeeList.push(employee);
       else employeeList = [employee];
     
-      alert(employeeList.toString());
       localStorage.setItem("EmployeePayrollList", JSON.stringify(employeeList));
+      alert(employeeList.toString());
     }
     
     function saveData(){
@@ -60,16 +60,21 @@ window.addEventListener('DOMContentLoaded', (event) => {
       employee.name= document.getElementById("name").value;
       employee.picture = document.querySelector('input[name = profile]:checked').value;
       employee.gender = document.querySelector('input[name = gender]:checked').value;
-      employee.department =document.querySelector('input[name = department]:checked').value;
+      let departmentCheckboxes =document.querySelectorAll('input[name = department]:checked');
+      let departments=new Array();
+      for(let department of departmentCheckboxes){
+        departments.push(department.value);
+      }
+      employee.department=departments;
+      console.log(document.querySelector('input[name = department]:checked').value);
       employee.salary = document.getElementById("salary").value;
      var day = document.getElementById("day").value;
      var month = document.getElementById("month").value;
      var year = document.getElementById("year").value;
       employee.note = document.getElementById("notes").value;
-      employee.startDate = new Date(parseInt(year), parseInt(month) - 1, parseInt(day));
+      employee.startDate = new Date(day+" "+month+" "+year);
     
-     createAndUpdateStorage(employee);
-     alert("Thank you. your data is saved " + employee.toString());
+     return employee;
     }
     
     const setValue = (id, value) => {
