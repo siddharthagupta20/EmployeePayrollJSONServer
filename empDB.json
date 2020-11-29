@@ -1,0 +1,63 @@
+{
+  "employees": [
+    {
+      "id": 1000,
+      "picture": "../assets/profile-images/Ellipse -8.png",
+      "name": "teresa",
+      "salary": 56000,
+      "department": [
+        "Sales",
+        "Finance"
+      ],
+      "gender": "female",
+      "startDate": "12 Nov 2020"
+    },
+    {
+      "id": 1001,
+      "picture": "../assets/profile-images/Ellipse -7.png",
+      "name": "john",
+      "salary": 64000,
+      "department": [
+        "Engineer"
+      ],
+      "gender": "male",
+      "startDate": "15 Nov 2020"
+    },
+    {
+      "_name": "Satyaki Ghosh",
+      "_gender": "male",
+      "_department": [
+        "Sales"
+      ],
+      "_salary": "4000",
+      "_startDate": "29 Oct 2019",
+      "_note": "",
+      "_picture": "../assets/profile-images/Ellipse -3.png",
+      "id": 1002
+    },
+    {
+      "_name": "Satyaki Ghosh",
+      "_gender": "male",
+      "_department": [
+        "Sales"
+      ],
+      "_salary": "4000",
+      "_startDate": "29 Oct 2019",
+      "_note": "",
+      "_picture": "../assets/profile-images/Ellipse -3.png",
+      "id": 1003
+    },
+    {
+      "_name": "Satyaki Ghosh",
+      "_gender": "male",
+      "_department": [
+        "Sales"
+      ],
+      "_salary": "4000",
+      "_startDate": "29 Oct 2019",
+      "_note": "",
+      "_picture": "../assets/profile-images/Ellipse -3.png",
+      "id": 1004
+    }
+  ]
+}

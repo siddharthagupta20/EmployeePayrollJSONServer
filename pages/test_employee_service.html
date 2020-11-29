@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Employee Services</title>
+    <style>
+        .body{margin: auto;}
+        div{
+            border: 1px solid black;
+            background-color: lightblue;
+            padding: 50px;
+            width: 80%;
+            font-size: xx-large;
+            margin-top: 50px;
+        }
+    </style>
+    <script src="../js/http_services.js"></script>
+</head>
+<body>
+    <h1>Test Results</h1>
+    <div id="get_services"></div>
+    <div id="delete_services"></div>
+    <div id="post_services"></div>
+    <script>
+        const getElement = document.querySelector("#get_services");
+        const getURL = "http://localhost:3000/employees/1";
+        makeServiceCall("GET", getURL, true)
+               .then(responseText => {
+                   getElement.textContent = "get user data: "+ responseText;
+                })
+               .catch(error => {
+                   getElement.textContent = "get error status : "+ JSON.stringify(error);
+               });
+
+        const deleteElement = document.querySelector("#delete_services");
+        const deleteURL = "http://localhost:3000/employees/2";
+        makeServiceCall("DELETE", deleteURL, false)
+            .then(responseText => {
+                deleteElement.textContent = "delete data : "+ responseText;
+            })
+            .catch(error => {
+                deleteElement.textContent = "delete error :"+ JSON.stringify(error);
+            });
+
+        const postElement = document.querySelector("#post_services");
+        const postURL = "http://localhost:3000/employees";
+        const empData = { _name: "Satyaki Ghosh",
+                          _gender: "male",
+                          _department:[
+                              "Sales"
+                          ],
+                         _salary: "4000",
+                         _startDate: "29 Oct 2019",
+                         _note: "",
+                         _picture: "../assets/profile-images/Ellipse -3.png"
+                        };
+        makeServiceCall("POST", postURL, true, empData)
+               .then(responseText => {
+                   postElement.textContent = "new user data : "+ responseText;
+               })
+            .catch(error => {
+                postElement.textContent = "post error status : "+ JSON.stringify(error);
+            });
+    </script>
+</body>
+</html> 
